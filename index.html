@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="container">
+        <div class="container_head flex">
+            <a href="#" class="compamy-logo">
+                <img id="comp-logo" src="yellow.png" alt="Company logo">
+            </a>
+            <div>
+                <ul class="navbar flex" id="nav">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Products</a></li>
+                    <li><a href="#" class="nav-link">NewsLetter</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link">Abouts</a></li>
+                    <li id="shop_icon"><a href="#" class="nav-link" id="shopicon"><i
+                                class="fa-solid fa-cart-shopping"></i></a></li>
+                </ul>
+                <!-- for mobile device -->
+                    <div id="menu">
+                        <a href="javascript:void(0);" class="nav-link" onclick="menuFunction()">
+                            <i class="fa-solid fa-bars"></i>
+                        </a>
+                        <div class="submenu" id="submenuid">
+                            <li><a href="#" class="nav-link">Home</a></li>
+                            <li><a href="#" class="nav-link">Products</a></li>
+                            <li><a href="#" class="nav-link">NewsLetter</a></li>
+                            <li><a href="#" class="nav-link">Contact</a></li>
+                            <li><a href="#" class="nav-link">Abouts</a></li>
+                            <li id="shop_icon"><a href="#" class="nav-link" id="shopicon"><i class="fa-solid fa-cart-shopping"></i>
+                                              </a>
+                            </li>
+                        </div>
+                    </div>
+
+                
+            </div>
+        </div>
+    </header>
+
+    <section class="section_container flex">
+
+        <div class="text flex">
+            <h1 class="linespacing font-wight-max"><span class="font-wight-min">Just</span> <br>DO IT</h1><br>
+            <p style="padding-right: 2rem;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Omnis dolores fuga consequatur, vel repudiandae eveniet ratione exercitationem harum, ab consectetur
+                provident facilis nostrum perferendis quaerat natus mollitia quos ullam enim.</p>
+            <button id="bt" class="primary-button"><span style="font-size: 20px; font-family: monospace;">Buy
+                    Now</span></button>
+        </div>
+
+        <div class="seconadry-full">
+
+            <img id="shoes" class="fullimg" src="asset 3.png" alt="redshoes" width="100%" height="100%">
+
+        </div>
+
+
+        <div class="vertical" id="vert-social"></div>
+
+    </section>
+    <div class="nav-img flex">
+        <img src="asset 3.png" alt="red shoes" onclick="chBackcolor('rgb(255 76 85)','asset 3.png','yellow');"
+            class="bottom-img">
+        <img src="asset 1.png" alt="black shoes" onclick="chBackcolor('#2C2B30','asset 1.png','white');"
+            class="bottom-img">
+        <img src="asset 2.png" alt="cream shoes" onclick="chBackcolor('#EDEAD0','asset 2.png','orange');"
+            class="bottom-img">
+    </div>
+
+    <div class="fotter" id="foot-social"></div>
+
+    <script>
+
+function menuFunction() {
+    const el = document.getElementById( 'submenuid' );
+    if( window.getComputedStyle( el ).display === "none" ) {
+        el.style.display = "block";
+    } else {
+        el.style.display = ""; // unset flex, so it returns to `none` as defined in the CSS.
+    }
+
+}
+
+
+        function chBackcolor(color, shoe_img, comp_log) {
+            document.body.style.background = color;
+            document.getElementById('shoes').src = shoe_img;
+            if (comp_log == 'white') {
+                document.getElementById("comp-logo").src = 'white.png';
+                document.getElementById("bt").style.background = '#ffffff';
+                document.body.style.color = "white";
+                var els = document.getElementsByClassName('nav-link');
+                for (var i = 0; i < els.length; i++) {
+                    els[i].style.color = 'white';
+                }
+            }
+            else if (comp_log == 'yellow') {
+                document.getElementById("comp-logo").src = 'yellow.png';
+                document.getElementById("bt").style.background = '#E0C339';
+                document.body.style.color = "black";
+
+                var els = document.getElementsByClassName('nav-link');
+                for (var i = 0; i < els.length; i++) {
+                    els[i].style.color = 'rgb(247 243 163)';
+                }
+            }
+            else {
+                document.getElementById("comp-logo").src = 'orange.png';
+                document.getElementById("bt").style.background = '#FFA94D';
+                document.body.style.color = "black";
+                var els = document.getElementsByClassName('nav-link');
+                for (var i = 0; i < els.length; i++) {
+                    els[i].style.color = '#FFA94D';
+                }
+            }
+        }
+
+
+        const social_Logo=`<ul class="ver-navbar flex">
+                <a href="#" class="sociallink nav-color"><img src="asset 5.png" alt="socialmedia"
+                        class="imglogo img"></a>
+                <a href="https://www.linkedin.com/in/suraj-giri-65a360229/" target="_blank"  class="sociallink nav-color"><img src="asset 6.png" alt="socialmedia"
+                        class="imglogo img"></a>
+                <a href="#" class="sociallink nav-color"><img src="asset 7.png" alt="socialmedia"
+                        class="imglogo img"></a>
+                <a href="#" class="sociallink nav-color"><img src="asset 8.png" alt="socialmedia"
+                        class="imglogo img"></a>
+
+            </ul>`
+
+            const verticalContainer = document.getElementById('vert-social');
+            verticalContainer.innerHTML = social_Logo;
+
+            const footerContainer = document.getElementById('foot-social');
+            footerContainer.innerHTML = social_Logo;
+
+
+    </script>
+
+    <script src="https://kit.fontawesome.com/d59309d9a2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
